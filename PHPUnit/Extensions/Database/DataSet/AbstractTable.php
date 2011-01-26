@@ -159,7 +159,7 @@ class PHPUnit_Extensions_Database_DataSet_AbstractTable implements PHPUnit_Exten
 
         for ($i = 0; $i < $rowCount; $i++) {
             foreach ($columns as $columnName) {
-                if ($this->getValue($i, $columnName) != $other->getValue($i, $columnName)) {
+                if ($this->getValue($i, $columnName) !== $other->getValue($i, $columnName)) {
                     throw new Exception("Expected value of {$this->getValue($i, $columnName)} for row {$i} column {$columnName}, has a value of {$other->getValue($i, $columnName)}");
                 }
             }
